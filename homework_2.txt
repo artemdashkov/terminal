@@ -71,14 +71,65 @@
 	$ ls -la
 
 17. Выйти из папки inner_dir_1
+	$ cd ../
+
 18. Вывести содержимое файла tf_3.txt в терминал.
+	$ cat tf_3.txt
+
 19. Найти путь к файлу tf_4.txt
+	$ find ./ -name "tf_4.txt"
+	
+	./inner_dir_1/tf_4.txt
+
 20. Отчистить файл tf_4.txt от содержимого без удаления самого файла.
+	$ :> inner_dir_1/tf_4.txt
+
 21. Найти путь к файлам у которых есть  “tf” в названии.
+	$ find ./ -name "*tf*"
+	
+	./inner_dir_1/tf_4.txt
+	./tf_1.txt
+	./tf_2.txt
+	./tf_3.txt
+
 22. Найти путь к файлам у которых есть  “tf” в названии и буквы в любом регистре.
+	$ find ./ -iname "*tf*"
+	
+	./inner_dir_1/tf_4.txt
+	./inner_dir_1/tF_5.txt
+	./tf_1.txt
+	./tf_2.txt
+	./tf_3.txt
+
 23. Найти строки в файлах где есть комбинация букв “sec” в текущей папке
+	$ grep -r sec .
+	./tf_2.txt:- the second 2
+	./tf_2.txt:the sec 3
+	./tf_3.txt:2. second line
+	./tf_3.txt:the second 2
+	./tf_3.txt:the sec 2
+
+	$ grep sec *
+	grep: inner_dir_1: Is a directory
+	tf_2.txt:- the second 2
+	tf_2.txt:the sec 3
+	tf_3.txt:2. second line
+	tf_3.txt:the second 2
+	tf_3.txt:the sec 2
+
 24. Найти строки в файлах где есть комбинация букв “sec” в любом регистре в текущей папке
+	$ grep -i -r sec .
+	./tf_2.txt:- the second 2
+	./tf_2.txt:the sec 3
+	./tf_2.txt:the seConD 2
+	./tf_3.txt:2. second line
+	./tf_3.txt:the second 2
+	./tf_3.txt:the sec 2
+	./tf_3.txt:the SeCoNd 2
+	
 25. Найти строки в файлах где есть только комбинация букв “sec” в текущей папке
+	
+
 26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке
 27. Найти строки в файлах где есть комбинация букв “second” в текущей папке
 28. Найти строки в файлах где есть комбинация букв “second” в любом регистре в текущей папке
