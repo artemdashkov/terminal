@@ -1,2 +1,0 @@
-name_1 - Ivan
-name_2 - Petr
