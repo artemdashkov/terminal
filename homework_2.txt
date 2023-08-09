@@ -102,13 +102,6 @@
 	./tf_3.txt
 
 23. Найти строки в файлах где есть комбинация букв “sec” в текущей папке
-	$ grep -r sec .
-	./tf_2.txt:- the second 2
-	./tf_2.txt:the sec 3
-	./tf_3.txt:2. second line
-	./tf_3.txt:the second 2
-	./tf_3.txt:the sec 2
-
 	$ grep sec *
 	grep: inner_dir_1: Is a directory
 	tf_2.txt:- the second 2
@@ -118,19 +111,24 @@
 	tf_3.txt:the sec 2
 
 24. Найти строки в файлах где есть комбинация букв “sec” в любом регистре в текущей папке
-	$ grep -i -r sec .
-	./tf_2.txt:- the second 2
-	./tf_2.txt:the sec 3
-	./tf_2.txt:the seConD 2
-	./tf_3.txt:2. second line
-	./tf_3.txt:the second 2
-	./tf_3.txt:the sec 2
-	./tf_3.txt:the SeCoNd 2
+	$ grep -i sec *
+	grep: inner_dir_1: Is a directory
+	tf_2.txt:- the second 2
+	tf_2.txt:the sec 3
+	tf_2.txt:the seConD 2
+	tf_3.txt:2. second line
+	tf_3.txt:the second 2
+	tf_3.txt:the sec 2
+	tf_3.txt:the SeCoNd 2
 	
 25. Найти строки в файлах где есть только комбинация букв “sec” в текущей папке
-	
+	$ grep -w -r sec .
+	./tf_2.txt:the sec 3
+	./tf_3.txt:the sec 2
 
 26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке
+	
+	
 27. Найти строки в файлах где есть комбинация букв “second” в текущей папке
 28. Найти строки в файлах где есть комбинация букв “second” в любом регистре в текущей папке
 29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем
