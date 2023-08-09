@@ -4,4 +4,5 @@ for ((counter= 1; counter <= 15; counter++))
 do
 echo "Sec is $counter"
 echo "sec is $counter -2"
+echo "------------------"
 done > tf_4.txt

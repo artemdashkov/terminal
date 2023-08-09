@@ -127,13 +127,65 @@
 	./tf_3.txt:the sec 2
 
 26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке
-	
+	$ grep -iw sec *
+	grep: inner_dir_1: Is a directory
+	tf_2.txt:the sec 3
+	tf_3.txt:the sec 2
 	
 27. Найти строки в файлах где есть комбинация букв “second” в текущей папке
+	$ grep -w second *
+	grep: inner_dir_1: Is a directory
+	tf_2.txt:- the second 2
+	tf_3.txt:2. second line
+	tf_3.txt:the second 2
+	
 28. Найти строки в файлах где есть комбинация букв “second” в любом регистре в текущей папке
+	$ grep -wi second *
+	grep: inner_dir_1: Is a directory
+	tf_2.txt:- the second 2
+	tf_2.txt:the seConD 2
+	tf_3.txt:2. second line
+	tf_3.txt:the second 2
+	tf_3.txt:the SeCoNd 2
+
 29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем
+	$ grep -wr second *
+	inner_dir_1/13_string.sh:echo "Number is $counter second"
+	inner_dir_1/tF_5.txt:Number is 1 second
+	inner_dir_1/tF_5.txt:Number is 2 second
+	inner_dir_1/tF_5.txt:Number is 3 second
+	inner_dir_1/tF_5.txt:Number is 4 second
+	inner_dir_1/tF_5.txt:Number is 5 second
+	inner_dir_1/tF_5.txt:Number is 6 second
+	inner_dir_1/tF_5.txt:Number is 7 second
+	inner_dir_1/tF_5.txt:Number is 8 second
+	inner_dir_1/tF_5.txt:Number is 9 second
+	inner_dir_1/tF_5.txt:Number is 10 second
+	inner_dir_1/tF_5.txt:Number is 11 second
+	inner_dir_1/tF_5.txt:Number is 12 second
+	inner_dir_1/tF_5.txt:Number is 13 second
+	tf_2.txt:- the second 2
+	tf_3.txt:2. second line
+	tf_3.txt:the second 2
+
 30. Найти только путь и название файла в строках которых есть комбинация букв “second” в текущей папке
+	$ grep -L second *
+	grep: inner_dir_1: Is a directory
+	inner_dir_1
+	tf_1.txt
+
 31. Найти все строки во всех файлах где нет комбинации “second”
+	$ grep -v second *
+	grep: inner_dir_1: Is a directory
+	tf_2.txt:- the first 1
+	tf_2.txt:- the third 3
+	tf_2.txt:the sec 3
+	tf_2.txt:the seConD 2
+	tf_3.txt:1. first line
+	tf_3.txt:3. third line
+	tf_3.txt:the sec 2
+	tf_3.txt:the SeCoNd 2
+
 32. Найти только название и путь к файлам где нет комбинации “second”
 33. Вывести в терминал 4 последних строк любого текстового файла
 34. Вывести в терминал 4 первые строки любого текстового файла.
@@ -143,3 +195,10 @@
 38. Команда в одну строку. Найти все строки c “sec” во всех текстовых файлах, скопировать и вставить эти строки в один новый созданный текстовый файл.
 39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”
 40. Просто вывести в терминал строку “Good job!!”
+
+
+Total commands:
+grep
+	-L, --files-without-match - выводить только имена файлов, будут выведены все файлы в которых выполняется поиск;
+	-i, --ignore-case - не учитывать регистр символов;
+	-v, --invert-match - вывести только те строки, в которых шаблон поиска не найден;
