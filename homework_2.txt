@@ -169,10 +169,10 @@
 	tf_3.txt:the second 2
 
 30. Найти только путь и название файла в строках которых есть комбинация букв “second” в текущей папке
-	$ grep -L second *
+	$ grep -l "second" * | xargs realpath
 	grep: inner_dir_1: Is a directory
-	inner_dir_1
-	tf_1.txt
+	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_2.txt
+	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_3.txt
 
 31. Найти все строки во всех файлах где нет комбинации “second”
 	$ grep -v second *
@@ -187,12 +187,65 @@
 	tf_3.txt:the SeCoNd 2
 
 32. Найти только название и путь к файлам где нет комбинации “second”
+	$ grep -v "second" * | xargs realpath
+	grep: inner_dir_1: Is a directory
+	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_2.txt:-
+	/c/Education/36_QA/git_terminal/terminal/dir_1/the
+	/c/Education/36_QA/git_terminal/terminal/dir_1/first
+	/c/Education/36_QA/git_terminal/terminal/dir_1/1
+	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_2.txt:-
+	/c/Education/36_QA/git_terminal/terminal/dir_1/the
+	/c/Education/36_QA/git_terminal/terminal/dir_1/third
+	/c/Education/36_QA/git_terminal/terminal/dir_1/3
+	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_2.txt:the
+	/c/Education/36_QA/git_terminal/terminal/dir_1/sec
+	/c/Education/36_QA/git_terminal/terminal/dir_1/3
+	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_2.txt:the
+	/c/Education/36_QA/git_terminal/terminal/dir_1/seConD
+	/c/Education/36_QA/git_terminal/terminal/dir_1/2
+	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_3.txt:1.
+	/c/Education/36_QA/git_terminal/terminal/dir_1/first
+	/c/Education/36_QA/git_terminal/terminal/dir_1/line
+	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_3.txt:3.
+	/c/Education/36_QA/git_terminal/terminal/dir_1/third
+	/c/Education/36_QA/git_terminal/terminal/dir_1/line
+	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_3.txt:the
+	/c/Education/36_QA/git_terminal/terminal/dir_1/sec
+	/c/Education/36_QA/git_terminal/terminal/dir_1/2
+	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_3.txt:the
+	/c/Education/36_QA/git_terminal/terminal/dir_1/SeCoNd
+	/c/Education/36_QA/git_terminal/terminal/dir_1/2
+
 33. Вывести в терминал 4 последних строк любого текстового файла
+	$ tail -4 ./inner_dir_1/tf_4.txt
+	------------------
+	Sec is 15
+	sec is 15 -2
+	------------------
+
 34. Вывести в терминал 4 первые строки любого текстового файла.
+	$ head -4 ./inner_dir_1/tf_4.txt
+	Sec is 1
+	sec is 1 -2
+	------------------
+	Sec is 2
+
 35. Команда в одну строку. Создать папку и создать текстовый файл с содержиммым.
+	$ mkdir new_folder ; cat > ./new_folder/new_text_file.txt
+	1
+	2
+	3
+	4
+
 36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
+	$ grep -wl "sec" * | xargs mv -t ./new_folder/
+
 37. Команда в одну строку. Скопировать в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
+	$ grep -wl "sec" ./inner_dir_1/* | xargs cp -t ../
+
 38. Команда в одну строку. Найти все строки c “sec” во всех текстовых файлах, скопировать и вставить эти строки в один новый созданный текстовый файл.
+	$ cat new_file_2.txt ; grep -r "sec" * | cat >> new_file_2.txt
+
 39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”
 40. Просто вывести в терминал строку “Good job!!”
 
