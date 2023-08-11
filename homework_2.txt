@@ -77,8 +77,10 @@
 	$ cat tf_3.txt
 
 19. Найти путь к файлу tf_4.txt
-	$ find ./ -name "tf_4.txt"
 	
+	find [папка] [параметры] критерий шаблон [действие]
+
+	$ find ./ -name "tf_4.txt"
 	./inner_dir_1/tf_4.txt
 
 20. Отчистить файл tf_4.txt от содержимого без удаления самого файла.
@@ -175,46 +177,10 @@
 	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_3.txt
 
 31. Найти все строки во всех файлах где нет комбинации “second”
-	$ grep -v second *
-	grep: inner_dir_1: Is a directory
-	tf_2.txt:- the first 1
-	tf_2.txt:- the third 3
-	tf_2.txt:the sec 3
-	tf_2.txt:the seConD 2
-	tf_3.txt:1. first line
-	tf_3.txt:3. third line
-	tf_3.txt:the sec 2
-	tf_3.txt:the SeCoNd 2
+	$ grep -vr "second" *
 
 32. Найти только название и путь к файлам где нет комбинации “second”
-	$ grep -v "second" * | xargs realpath
-	grep: inner_dir_1: Is a directory
-	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_2.txt:-
-	/c/Education/36_QA/git_terminal/terminal/dir_1/the
-	/c/Education/36_QA/git_terminal/terminal/dir_1/first
-	/c/Education/36_QA/git_terminal/terminal/dir_1/1
-	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_2.txt:-
-	/c/Education/36_QA/git_terminal/terminal/dir_1/the
-	/c/Education/36_QA/git_terminal/terminal/dir_1/third
-	/c/Education/36_QA/git_terminal/terminal/dir_1/3
-	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_2.txt:the
-	/c/Education/36_QA/git_terminal/terminal/dir_1/sec
-	/c/Education/36_QA/git_terminal/terminal/dir_1/3
-	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_2.txt:the
-	/c/Education/36_QA/git_terminal/terminal/dir_1/seConD
-	/c/Education/36_QA/git_terminal/terminal/dir_1/2
-	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_3.txt:1.
-	/c/Education/36_QA/git_terminal/terminal/dir_1/first
-	/c/Education/36_QA/git_terminal/terminal/dir_1/line
-	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_3.txt:3.
-	/c/Education/36_QA/git_terminal/terminal/dir_1/third
-	/c/Education/36_QA/git_terminal/terminal/dir_1/line
-	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_3.txt:the
-	/c/Education/36_QA/git_terminal/terminal/dir_1/sec
-	/c/Education/36_QA/git_terminal/terminal/dir_1/2
-	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_3.txt:the
-	/c/Education/36_QA/git_terminal/terminal/dir_1/SeCoNd
-	/c/Education/36_QA/git_terminal/terminal/dir_1/2
+	$ grep -Lr "second" * | xargs realpath
 
 33. Вывести в терминал 4 последних строк любого текстового файла
 	$ tail -4 ./inner_dir_1/tf_4.txt
@@ -247,11 +213,8 @@
 	$ cat new_file_2.txt ; grep -r "sec" * | cat >> new_file_2.txt
 
 39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”
+	$ grep -lrs sec | xargs rm
+
 40. Просто вывести в терминал строку “Good job!!”
-
-
-Total commands:
-grep
-	-L, --files-without-match - выводить только имена файлов, будут выведены все файлы в которых выполняется поиск;
-	-i, --ignore-case - не учитывать регистр символов;
-	-v, --invert-match - вывести только те строки, в которых шаблон поиска не найден;
+$ echo '"Good Job!!"'
+"Good Job!!"
