@@ -34,9 +34,11 @@ git pull
 git branch
 	- показывает на какой ветке сейчас находимся
 	
-git card_pay
-	- создать ветку card_pay
+git checkout card_pay
+	- создать ветку card_pay либо в нее перейти (если она уже создана)
 	
 git checkout -b card_pay
 	- создать ветку card_pay и сразу в нее перейти
 	
+(main) git merge card_pay - в ветку 'main' "влить" ветку 'card_pay'
+  
