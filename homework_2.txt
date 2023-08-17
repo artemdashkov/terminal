@@ -171,16 +171,16 @@
 	tf_3.txt:the second 2
 
 30. Найти только путь и название файла в строках которых есть комбинация букв “second” в текущей папке
-	$ grep -l "second" * | xargs realpath
+	$ grep -l 'second' * | xargs realpath
 	grep: inner_dir_1: Is a directory
 	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_2.txt
 	/c/Education/36_QA/git_terminal/terminal/dir_1/tf_3.txt
 
 31. Найти все строки во всех файлах где нет комбинации “second”
-	$ grep -vr "second" *
+	$ grep -vr 'second' *
 
 32. Найти только название и путь к файлам где нет комбинации “second”
-	$ grep -Lr "second" * | xargs realpath
+	$ grep -Lr 'second' * | xargs realpath
 
 33. Вывести в терминал 4 последних строк любого текстового файла
 	$ tail -4 ./inner_dir_1/tf_4.txt
@@ -204,16 +204,16 @@
 	4
 
 36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
-	$ grep -wl "sec" * | xargs mv -t ./new_folder/
+	$ grep -wl 'sec' * | xargs mv -t ./new_folder/
 
 37. Команда в одну строку. Скопировать в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
-	$ grep -wl "sec" ./inner_dir_1/* | xargs cp -t ../
+	$ grep -wl 'sec' ./inner_dir_1/* | xargs cp -t ../
 
 38. Команда в одну строку. Найти все строки c “sec” во всех текстовых файлах, скопировать и вставить эти строки в один новый созданный текстовый файл.
-	$ cat new_file_2.txt ; grep -r "sec" * | cat >> new_file_2.txt
+	$ cat new_file_2.txt ; grep -r 'sec' * | cat >> new_file_2.txt
 
 39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”
-	$ grep -lrs sec | xargs rm
+	$ grep -lrs 'sec' | xargs rm
 
 40. Просто вывести в терминал строку “Good job!!”
 $ echo '"Good Job!!"'
