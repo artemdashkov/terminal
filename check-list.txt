@@ -1,0 +1,30 @@
+21/08 - 4 часа
+изучение теории о формировании mind map. обсуждение подхода построения mind map с командой. участие в дискорд и формировании mind map.
+
+22/08 - 4 часа
+Посмотрел ролики Вадима по работе с Charles. Установил Charles на ПК, установил связь между ПК, телефоном и Charles.
+
+/channel/UCgUgUM_0y3n_fTCjm6q7vDA
+e=comicoinapp&utm_campaign+our_products
+
+23/08
+Разбирался как в Charles подменить один ресурс другим. 
+
+24/08
+Снова ознакомился с правилами заведения багов. Для поиска багов в приложении ComiCoin выполнил Ad-hoc тест. Найденный баг завел в файл с багами. 
+2 часа
+
+4756tester@gmail.com
+chabanova.ca@gmail.com
+doctorcasper36@gmail.com
+eannakrol@gmail.com
+iMaxManis@gmail.com
+LadyLyu3@gmail.com
+karshakevichqa@gmail.com
+
+"Кейс_2" - Smoke Checklist готов
+
+=======Git hab pages=======
+Pavel Taranok презентация самой странички
+https://www.markdownguide.org/basic-syntax/
+https://docs.github.com/ru/pages/getting-started-with-github-pages/creating-a-github-pages-site
